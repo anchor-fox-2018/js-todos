@@ -6,8 +6,8 @@ let arg1 = String(process.argv[2]);
 let arg2 = String(process.argv[3]);
 // console.log(arg1);
 // console.log(arg2);
-// arg1 = "add";
-
+// arg1 = "findbyID";
+// arg2 = 1;
 switch (arg1.toLowerCase()) {
     case "help":
         Controller.help();
@@ -19,7 +19,7 @@ switch (arg1.toLowerCase()) {
         Controller.add(arg2);
         break;
     case "findbyid":
-
+        Controller.findById(arg2);
         break;
 
     default:

@@ -15,7 +15,7 @@ class Controller {
         let data = Model.list().toString();
         let dataJson = JSON.parse(data);
         let result = dataJson.map(a => a.todo);
-        View.print(`To do list:`)
+        View.print(`To do list:`);
         result.forEach(function name(element, index) {
             View.print(`${index + 1}. ${element}`);
         });
@@ -25,8 +25,15 @@ class Controller {
         let dataJson = JSON.parse(data);
         dataJson.push({ "id": dataJson.length + 1, "todo": task, "status": true })
         Model.add(JSON.stringify(dataJson));
+        View.print(`Added ${task} to your TODO list`);
     }
     static findById(taskId) {
+        let data = Model.list().toString();
+        let dataJson = JSON.parse(data);
+        let result = dataJson.find(function (element) {
+            return element.id = taskId;
+        });
+        View.print(result);
 
     }
     static delete(taskId) {
