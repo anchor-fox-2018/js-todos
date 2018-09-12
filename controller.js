@@ -5,12 +5,15 @@ class Controller {
   controller() {}
 
   static todoMenu(option) {
+    let data = Model.getData();
+
     if (option === 'help') {
       View.help();
-    } else {
-      return 'There\'s an error in the system'
+    } else if (option === 'list') {
+      View.list(data);
     }
   }
-}
+  
+} //end class controller
 
 module.exports = Controller

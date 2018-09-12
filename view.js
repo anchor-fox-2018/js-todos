@@ -11,6 +11,13 @@ class View {
     console.log('complete <task_id>: to mark todo list as complete');
     console.log('uncomplete <task_id>: to mark todo list as uncomplete');
   }
-}
+
+  static list(data) {
+    for (var i = 0; i < data.length; i++) {
+      console.log(`${i+1}. ${data[i].task}`);
+    }
+  }
+  
+} //end class View
 
 module.exports = View
