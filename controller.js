@@ -25,6 +25,10 @@ class Controller {
     } else if (option === 'uncomplete') {
       Model.uncompleteData(data, task_content);
       View.uncomplete(data, task_content);
+    } else if (option === 'list:outstanding' && task_content === 'asc') {
+      View.sortedAscending(data);
+    } else if (option === 'list:outstanding' && task_content === 'desc') {
+      View.sortedDescending(data);
     }
   }
 

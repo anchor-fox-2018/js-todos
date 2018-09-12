@@ -1,18 +1,22 @@
 [
   {
     "task": "Bikin aplikasi",
-    "completed": false
+    "completed": false,
+    "created_date": "2018-09-05"
   },
   {
     "task": "Main Node.js",
-    "completed": false
+    "completed": false,
+    "created_date": "2018-09-06"
   },
   {
     "task": "Testing this code again",
-    "completed": false
+    "completed": false,
+    "created_date": "2018-09-07"
   },
   {
     "task": "Shut down my computer",
-    "completed": false
+    "completed": false,
+    "created_date": "2018-09-08"
   }
 ]

@@ -4,12 +4,16 @@ class View {
   static help() {
     console.log('Choose one of the following options:');
     console.log('-------------------------------------------------------');
-    console.log('list: to show all your todo list');
-    console.log('add <task_content>: to add a todo list');
-    console.log('findById <task_id>: to find todo list by id');
-    console.log('delete <task_id>: to delete todo list by id');
-    console.log('complete <task_id>: to mark todo list as complete');
-    console.log('uncomplete <task_id>: to mark todo list as uncomplete');
+    console.log('list                      ---> to show all your todo list');
+    console.log('add <task_content>        ---> to add a todo list');
+    console.log('findById <task_id>        ---> to find todo list by id');
+    console.log('delete <task_id>          ---> to delete todo list by id');
+    console.log('complete <task_id>        ---> to mark todo list as complete');
+    console.log('uncomplete <task_id>      ---> to mark todo list as uncomplete');
+    console.log('list:outstanding asc|desc ---> to show todo list based on created bate');
+    console.log('list:completed asc|desc   ---> to show to do list completed in asc or desc order');
+    console.log('tag <task_id> <tag_name>  ---> to add tag');
+    console.log('filter: <tag_name>        ---> to filter list by tag_name');
   }
 
   static list(data) {
@@ -43,6 +47,22 @@ class View {
   static uncomplete(data, id) {
     let taskId = Number(id - 1);
     console.log(`"${data[taskId]['task']}" marked as uncomplete`);
+  }
+
+  static sortedAscending(data) {
+    let sorted = data.sort((a, b) => a['created_date'] > b['created_date']);
+    console.log(`Sorted from oldest to newest:`);
+    for (var i = 0; i < sorted.length; i++) {
+      console.log(`${i+1}. ${sorted[i]['task']}`);
+    }
+  }
+
+  static sortedDescending(data) {
+    let sorted = data.sort((a, b) => a['created_date'] < b['created_date']);
+    console.log(`Sorted from newest to oldest:`);
+    for (var i = 0; i < sorted.length; i++) {
+      console.log(`${i+1}. ${sorted[i]['task']}`);
+    }
   }
 
 } //end class View
