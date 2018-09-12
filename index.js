@@ -6,14 +6,14 @@ let arg1 = String(process.argv[2]);
 let arg2 = String(process.argv[3]);
 // console.log(arg1);
 // console.log(arg2);
-//arg1 = "help";
+//arg1 = "list";
 
 switch (arg1.toLowerCase()) {
     case "help":
         Controller.help();
         break;
     case "list":
-
+        Controller.list();
         break;
     case "add":
 

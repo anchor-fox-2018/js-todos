@@ -6,7 +6,8 @@ class Model {
     }
 
     static list() {
-
+        let data = fs.readFileSync("data.json");
+        return data;
     }
     static add(task) {
 

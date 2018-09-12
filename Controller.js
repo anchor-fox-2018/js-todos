@@ -12,7 +12,13 @@ class Controller {
     }
 
     static list() {
-
+        let data = Model.list().toString();
+        let dataJson = JSON.parse(data);
+        let result = dataJson.map(a => a.todo);
+        View.print(`To do list:`)
+        result.forEach(function name(element, index) {
+            View.print(`${index + 1}. ${element}`);
+        });
     }
     static add(task) {
 
