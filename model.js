@@ -16,6 +16,12 @@ class Model {
     fs.writeFileSync('./data.json', finalData, 'utf8');
   }
 
+  static deleteData(data, task_content) {
+    data.splice(Number(task_content - 1), 1);
+    let finalData = JSON.stringify(data, null, 2);
+    fs.writeFileSync('./data.json', finalData, 'utf8');
+  }
+
 } // end class model
 
 module.exports = Model

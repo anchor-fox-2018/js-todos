@@ -27,6 +27,10 @@ class View {
     console.log(`${id}. ${data[taskId]['task']}`);
   }
 
+  static delete(data, task_content) {
+    console.log(`Deleted "${data[Number(task_content - 1)]['task']}" from your todo list...`);
+  }
+
 } //end class View
 
 module.exports = View

@@ -13,9 +13,12 @@ class Controller {
       View.list(data);
     } else if (option === 'add') {
       Model.addData(task_content);
-      return View.add(task_content)
+      View.add(task_content);
     } else if (option === 'findById') {
-      return View.contentById(data, task_content)
+      View.contentById(data, task_content);
+    } else if (option === 'delete') {
+      View.delete(data, task_content);
+      Model.deleteData(data, task_content);
     }
   }
 
