@@ -65,6 +65,24 @@ class View {
     }
   }
 
+  static completedAscending(data) {
+    let filter = data.filter(element => element['completed'] === true);
+    let sorted = filter.sort((a, b) => a['created_date'] > b['created_date']);
+    console.log(`Sorted completed task from oldest to newest:`);
+    for (var i = 0; i < sorted.length; i++) {
+      console.log(`${i+1}. ${sorted[i]['task']}`);
+    }
+  }
+
+  static completedDescending(data) {
+    let filter = data.filter(element => element['completed'] === true);
+    let sorted = filter.sort((a, b) => a['created_date'] < b['created_date']);
+    console.log(`Sorted completed task from newest to oldest:`);
+    for (var i = 0; i < sorted.length; i++) {
+      console.log(`${i+1}. ${sorted[i]['task']}`);
+    }
+  }
+
 } //end class View
 
 module.exports = View

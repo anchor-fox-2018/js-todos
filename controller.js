@@ -25,10 +25,14 @@ class Controller {
     } else if (option === 'uncomplete') {
       Model.uncompleteData(data, task_content);
       View.uncomplete(data, task_content);
-    } else if (option === 'list:outstanding' && task_content === 'asc') {
+    } else if (option === 'list:outstanding' && task_content === 'asc' || option === 'list:outstanding' && task_content === '') {
       View.sortedAscending(data);
     } else if (option === 'list:outstanding' && task_content === 'desc') {
       View.sortedDescending(data);
+    } else if (option === 'list:completed' && task_content === 'asc' || option === 'list:completed' && task_content === '') {
+      View.completedAscending(data);
+    } else if (option === 'list:completed' && task_content === 'desc') {
+      View.completedDescending(data);
     }
   }
 
