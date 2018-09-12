@@ -1,0 +1,23 @@
+[
+    {
+        "command": "node index.js help"
+    },
+    {
+        "command": "node index.js list"
+    },
+    {
+        "command": "node index.js add <task content>"
+    },
+    {
+        "command": "node index.js findbyid <task content>"
+    },
+    {
+        "command": "node index.js delete <task content>"
+    },
+    {
+        "command": "node index.js complete <task content>"
+    },
+    {
+        "command": "node index.js uncomplete <task content>"
+    }
+]
