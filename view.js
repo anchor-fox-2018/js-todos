@@ -17,7 +17,10 @@ class View {
       console.log(`${i+1}. ${data[i].task}`);
     }
   }
-  
+
+  static add(task_content) {
+    console.log(`"${task_content}" added`);
+  }
 } //end class View
 
 module.exports = View

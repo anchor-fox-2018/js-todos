@@ -1,4 +1,14 @@
 [
-  {"task" : "Bikin aplikasi"},
-  {"task" : "Main Node.js"}
+  {
+    "task": "Bikin aplikasi"
+  },
+  {
+    "task": "Main Node.js"
+  },
+  {
+    "task": "Testing this code again"
+  },
+  {
+    "task": "Shut down my computer"
+  }
 ]
