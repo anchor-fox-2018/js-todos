@@ -1,14 +1,18 @@
 [
   {
-    "task": "Bikin aplikasi"
+    "task": "Bikin aplikasi",
+    "completed": false
   },
   {
-    "task": "Main Node.js"
+    "task": "Main Node.js",
+    "completed": false
   },
   {
-    "task": "Testing this code again"
+    "task": "Testing this code again",
+    "completed": false
   },
   {
-    "task": "Shut down my computer"
+    "task": "Shut down my computer",
+    "completed": false
   }
 ]

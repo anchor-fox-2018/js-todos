@@ -19,6 +19,12 @@ class Controller {
     } else if (option === 'delete') {
       View.delete(data, task_content);
       Model.deleteData(data, task_content);
+    } else if (option === 'complete') {
+      Model.completeData(data, task_content);
+      View.completed(data, task_content);
+    } else if (option === 'uncomplete') {
+      Model.uncompleteData(data, task_content);
+      View.uncomplete(data, task_content);
     }
   }
 

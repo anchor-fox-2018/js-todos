@@ -22,6 +22,18 @@ class Model {
     fs.writeFileSync('./data.json', finalData, 'utf8');
   }
 
+  static completeData(data, task_content) {
+    data[Number(task_content) - 1]['completed'] = true;
+    let finalData = JSON.stringify(data, null, 2);
+    fs.writeFileSync('./data.json', finalData, 'utf8');
+  }
+
+  static uncompleteData(data, task_content) {
+    data[Number(task_content) - 1]['completed'] = false;
+    let finalData = JSON.stringify(data, null, 2);
+    fs.writeFileSync('./data.json', finalData, 'utf8');
+  }
+
 } // end class model
 
 module.exports = Model

@@ -14,7 +14,11 @@ class View {
 
   static list(data) {
     for (var i = 0; i < data.length; i++) {
-      console.log(`${i+1}. ${data[i].task}`);
+      if (data[i]['completed'] === true) {
+        console.log(`${i+1}. [x] ${data[i]['task']}`);
+      } else {
+        console.log(`${i+1}. [ ] ${data[i]['task']}`);
+      }
     }
   }
 
@@ -29,6 +33,16 @@ class View {
 
   static delete(data, task_content) {
     console.log(`Deleted "${data[Number(task_content - 1)]['task']}" from your todo list...`);
+  }
+
+  static completed(data, id) {
+    let taskId = Number(id - 1);
+    console.log(`"${data[taskId]['task']}" marked as complete`);
+  }
+
+  static uncomplete(data, id) {
+    let taskId = Number(id - 1);
+    console.log(`"${data[taskId]['task']}" marked as uncomplete`);
   }
 
 } //end class View
