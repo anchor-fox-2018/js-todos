@@ -21,6 +21,12 @@ class View {
   static add(task_content) {
     console.log(`"${task_content}" added`);
   }
+
+  static contentById(data, id) {
+    let taskId = Number(id - 1);
+    console.log(`${id}. ${data[taskId]['task']}`);
+  }
+
 } //end class View
 
 module.exports = View

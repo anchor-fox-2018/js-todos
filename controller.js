@@ -14,6 +14,8 @@ class Controller {
     } else if (option === 'add') {
       Model.addData(task_content);
       return View.add(task_content)
+    } else if (option === 'findById') {
+      return View.contentById(data, task_content)
     }
   }
 
