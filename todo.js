@@ -62,6 +62,6 @@ if(masukan === 'help'){
     buatId(data);
     let delTodo = JSON.stringify(data);
     fs.writeFileSync('data.json', delTodo,'utf8');
-    console.log(data)
+    //console.log(data)
 // let finalData = JSON.stringify(data);
 //console.log(inputData(data))
