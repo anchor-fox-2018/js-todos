@@ -21,7 +21,10 @@ class Controller {
         });
     }
     static add(task) {
-
+        let data = Model.list().toString();
+        let dataJson = JSON.parse(data);
+        dataJson.push({ "id": dataJson.length + 1, "todo": task, "status": true })
+        Model.add(JSON.stringify(dataJson));
     }
     static findById(taskId) {
 

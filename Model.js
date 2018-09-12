@@ -10,7 +10,7 @@ class Model {
         return data;
     }
     static add(task) {
-
+        let dataRead = fs.writeFileSync("data.json", task, { encoding: "utf8", mode: 0o666, flag: "w" });
     }
     static findById(taskId) {
 
