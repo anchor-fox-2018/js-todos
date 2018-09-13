@@ -83,6 +83,11 @@ class View {
     }
   }
 
+  static tagger(data, task_content, tag) {
+    console.log(`You just tag "${data[Number(task_content) - 1]['task']}" with: ${tag}`);
+  }
+
+
 } //end class View
 
 module.exports = View

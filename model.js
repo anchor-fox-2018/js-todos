@@ -17,7 +17,7 @@ class Model {
   }
 
   static deleteData(data, task_content) {
-    data.splice(Number(task_content - 1), 1);
+    data.splice((Number(task_content) - 1), 1);
     let finalData = JSON.stringify(data, null, 2);
     fs.writeFileSync('./data.json', finalData, 'utf8');
   }
@@ -30,6 +30,13 @@ class Model {
 
   static uncompleteData(data, task_content) {
     data[Number(task_content) - 1]['completed'] = false;
+    let finalData = JSON.stringify(data, null, 2);
+    fs.writeFileSync('./data.json', finalData, 'utf8');
+  }
+
+  static addTag(data, task_content, tag) {
+    let id = Number(task_content) - 1;
+    data[id]["tag"] = [tag];
     let finalData = JSON.stringify(data, null, 2);
     fs.writeFileSync('./data.json', finalData, 'utf8');
   }

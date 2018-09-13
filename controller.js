@@ -4,7 +4,7 @@ const View = require('./view.js');
 class Controller {
   controller() {}
 
-  static todoMenu(option, task_content) {
+  static todoMenu(option, task_content, tag) {
     let data = Model.getData();
 
     if (option === 'help') {
@@ -32,7 +32,10 @@ class Controller {
     } else if (option === 'list:completed' && task_content === 'asc' || option === 'list:completed' && task_content === '') {
       View.completedAscending(data);
     } else if (option === 'list:completed' && task_content === 'desc') {
-      View.completedDescending(data);
+      View.completedDescending(data, task_content, tag);
+    } else if (option === 'tag') {
+      Model.addTag(data, task_content, tag);
+      View.tagger(data, task_content, tag);
     }
   }
 

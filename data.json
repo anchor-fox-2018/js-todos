@@ -2,7 +2,10 @@
   {
     "task": "Bikin aplikasi",
     "completed": true,
-    "created_date": "2018-09-05"
+    "created_date": "2018-09-05",
+    "tag": [
+      "test"
+    ]
   },
   {
     "task": "Main Node.js",
