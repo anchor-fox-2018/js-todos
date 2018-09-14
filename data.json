@@ -1,1 +1,25 @@
-[]
+[
+  {
+    "task": "Bikin aplikasi",
+    "completed": true,
+    "created_date": "2018-09-05",
+    "tag": [
+      "test"
+    ]
+  },
+  {
+    "task": "Main Node.js",
+    "completed": false,
+    "created_date": "2018-09-06"
+  },
+  {
+    "task": "Testing this code again",
+    "completed": true,
+    "created_date": "2018-09-07"
+  },
+  {
+    "task": "Shut down my computer",
+    "completed": false,
+    "created_date": "2018-09-08"
+  }
+]
