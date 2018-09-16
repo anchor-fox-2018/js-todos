@@ -18,7 +18,15 @@ class Task {
 
     static list() {
         for (let i = 0; i < parsed.length; i++) {
-            console.log(`${i + 1}: ${parsed[i].task}`);
+            let cond = '';
+            if (parsed[i].condition === 'incomplete') {
+                cond = ' ';
+            }
+
+            else if (parsed[i].condition === 'complete') {
+                cond = 'X'
+            }
+            console.log(`[${cond}] ${i + 1}: ${parsed[i].task}`);
         }
     }
 
@@ -46,11 +54,35 @@ class Task {
         let stringified = JSON.stringify(parsed);
         fs.writeFileSync('data.json', stringified, 'utf8');
     }
+
+    static incomplete(input) {
+        let numbered = Number(input);
+        parsed[numbered - 1].condition = 'incomplete';
+        
+        let stringified = JSON.stringify(parsed);
+        fs.writeFileSync('data.json', stringified, 'utf8');
+
+        Task.list();
+    }
+
+    static complete(input) {
+        let numbered = Number(input);
+        parsed[numbered - 1].condition = 'complete';
+
+        let stringified = JSON.stringify(parsed);
+        fs.writeFileSync('data.json', stringified, 'utf8');
+
+        Task.list();
+    }
 }
 
-// running classes through if's
 
-if (process.argv[2] === ('help' || undefined)) {
+
+//////////////////////////////////
+// running classes through if's //
+//////////////////////////////////
+
+if (process.argv[2] === 'help' || process.argv[2] === undefined) {
     Task.help();
 }
 
@@ -68,6 +100,14 @@ else if (process.argv[2] === 'findById') {
 
 else if (process.argv[2] === 'delete') {
     Task.delete(process.argv[3]);
+}
+
+else if (process.argv[2] === 'complete') {
+    Task.complete(process.argv[3]);
+}
+
+else if (process.argv[2] === 'incomplete') {
+    Task.incomplete(process.argv[3]);
 }
 
 else {
